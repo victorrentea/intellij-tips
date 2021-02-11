@@ -2,8 +2,6 @@ package victor.training;
 
 public class IntelliJPlay {
 
-
-
    // Over-dot expansion LDT.n -> LocalDateTime.now()
    // CTRL-SPACE x 2 - Import Static
    // CTRL-SHIFT-ENTER - Complete Statement
@@ -15,17 +13,18 @@ public class IntelliJPlay {
    // ALT-J Multi-cursor **ROCKS**
    // Surround with (if, try) - CTRL-ALT-T
    // Refactor this - CTRL-ALT-SHIFT-T
-   // Switcher CTRL-E
-   // Navigate CTRL-ALT-LEFT/RIGHT vs CTRL-SHIFT-E vs CTRL-SHIFT-V
-   // CTRL-W - Enlarge Syntax Selection
+   // Recent Files CTRL-E
+   // Navigate Back CTRL-ALT-LEFT/RIGHT vs CTRL-SHIFT-E vs CTRL-SHIFT-V
+   // CTRL-W - Extend Selection
+
 
    // ALT-ENTER Poem
    // define variable **
    // unmodifiable
    // Move variable closer to usages
-   // move return closer to computation
-   // try with resources
+   // Move return closer
    // extract expression (select blocks)
+   // try with resources
 
    // BONUS: SQL
 }
