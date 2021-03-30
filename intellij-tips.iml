@@ -4,7 +4,9 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="intellij-tips" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -25,8 +27,6 @@
     <orderEntry type="library" name="Maven: javax.persistence:javax.persistence-api:2.2" level="project" />
     <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" name="Maven: org.jooq:jool:0.9.14" level="project" />
-    <orderEntry type="library" name="Maven: io.vavr:vavr:0.10.3" level="project" />
-    <orderEntry type="library" name="Maven: io.vavr:vavr-match:0.10.3" level="project" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
   </component>

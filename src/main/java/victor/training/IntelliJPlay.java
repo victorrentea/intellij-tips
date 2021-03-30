@@ -1,30 +1,50 @@
 package victor.training;
 
+
+import java.util.List;
+
 public class IntelliJPlay {
 
-   // Over-dot expansion LDT.n -> LocalDateTime.now()
-   // CTRL-SPACE x 2 - Import Static
-   // CTRL-SHIFT-ENTER - Complete Statement
-   // Live Templates + custom logs
-   // Postfix Expansion (.sout .if .for) + custom .log .assert
-   // TAB completion
-   // CTRL-SHIFT-SPACE - Type-safe auto-completion
-   // Generating Boilerplate by autocomplete: getter/setter/toString/hashCode-equals
-   // ALT-J Multi-cursor **ROCKS**
-   // Surround with (if, try) - CTRL-ALT-T
-   // Refactor this - CTRL-ALT-SHIFT-T
-   // Recent Files CTRL-E
-   // Navigate Back CTRL-ALT-LEFT/RIGHT vs CTRL-SHIFT-E vs CTRL-SHIFT-V
-   // CTRL-W - Extend Selection
+   // Note: all keys are for windows
+
+   // ** Auto-Completion
+   // - Contains / first letters, eg: person.gfn
+   // - Over-dot completion, eg p.gfn, LDT.now()
+   // - Static completion (CTRL-SPACE x 2), eg now, ctm
+   // - Type-safe completion (CTRL-SHIFT-SPACE)
+   // - Boilerplate completion: getter/setter/toString/hashCode-equals
+   // - TAB completion
+
+   // ** Templates
+   // - Live Templates, eg. boot, main, sout + CUSTOM: >logs, soutc, pf
+   // - Postfix Expansion, eg .sout .if .for .return + CUSTOM: .log .assertThat
+
+   // ** ALT-ENTER
+   // - Define variable
+   // - Move variable definition closer to usages
+   // - Move return closer
+   // - Try-with-resources
+
+   // ** REFACTORING
+   // - Extract var/meth (select blocks)
+   // - Refactor this (CTRL-ALT-SHIFT-T)
+   // - Extract Interface
+   // - Introduce Parameter. Inline back
+   // - Introduce Parameter Object. Reuse
+
+   // ** SPEED-UP MAGIC
+   // - Complete Statement (CTRL-SHIFT-ENTER): if, method, "wrap call around"
+   // - Multi-cursor (ALT-J) << ROCKS; eg: enum
+   // - Surround with (CTRL-ALT-T) eg: if, try
+
+   // ** NAVIGATION / SELECTION
+   // - Back/Forward (CTRL-ALT-LEFT/RIGHT)
+   // - Recent Files (CTRL-E)
+   // - Recent Locations (CTRL-SHIFT-E)
+   // - Clipboard History (CTRL-SHIFT-V)
+   // - Expand Selection (CTRL-[SHIFT]-W)
 
 
-   // ALT-ENTER Poem
-   // define variable **
-   // unmodifiable
-   // Move variable closer to usages
-   // Move return closer
-   // extract expression (select blocks)
-   // try with resources
 
    // BONUS: SQL
 }
