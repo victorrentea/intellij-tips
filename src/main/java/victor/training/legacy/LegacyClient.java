@@ -8,7 +8,7 @@ public class LegacyClient {
    }
 
    public void clientCode() {
-       legacyCode.deepMethod(2);
-       legacyCode.deepMethod(3);
+      System.out.println(legacyCode.deepMethod(2));
+      System.out.println(legacyCode.deepMethod(3));
    }
 }
