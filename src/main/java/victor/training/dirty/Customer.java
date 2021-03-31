@@ -6,12 +6,11 @@ import java.util.List;
 
 public class Customer {
 	private String name;
-	private List<Rental> rentals = new ArrayList<>();
+	private List rentals = new ArrayList();
 
 	public List<Rental> getRentals() {
 		return rentals;
 	}
-
 
 	public Customer(String name) {
 		this.name = name;
@@ -27,47 +26,34 @@ public class Customer {
 
 	public String statement() {
 		double totalPrice = 0;
-		int frequentRenterPoints = 0;
-		Iterator<Rental> rentals = this.rentals.iterator(); // TODO move down
-		String result = "Rental Record for " + getName() + "\n";
+		Iterator rentals = this.rentals.iterator();
+		String result = "Rental Record for " + name + "\n";
 		while (rentals.hasNext()) {
-			Rental rental = rentals.next();
-			// methodTakingAMovie();
+			Rental rental = (Rental) rentals.next();
 
 			double price = 0;
 			switch (rental.getMovie().getPriceCode()) {
 			case Movie.CATEGORY_REGULAR:
-				price += 2;
+				price = 2;
 				if (rental.getDaysRented() > 2)
 					price += (rental.getDaysRented() - 2) * 1.5;
 				break;
 			case Movie.CATEGORY_NEW_RELEASE:
-				price += rental.getDaysRented() * 3;
+				price = rental.getDaysRented() * 3;
 				break;
 			case Movie.CATEGORY_CHILDRENS:
-				price += 1.5;
+				price = 1.5;
 				if (rental.getDaysRented() > 3)
 					price += (rental.getDaysRented() - 3) * 1.5;
 				break;
 			}
-			// add frequent renter points
-			frequentRenterPoints++;
-			// add bonus for a two day new release rental
-			if ((rental.getMovie().getPriceCode() == Movie.CATEGORY_NEW_RELEASE)
-					&& rental.getDaysRented() > 1)
-				frequentRenterPoints++;
-			// show figures for this rental
-			result += "\t" + rental.getMovie().getTitle() + "\t"
-					+ price + "\n";
+			result += "\t" + rental.getMovie().getTitle() + "\t" + price + "\n";
 			totalPrice += price;
 		}
-		// add footer lines
 		result += "Amount owed is " + String.valueOf(totalPrice) + "\n";
-		result += "You earned " + String.valueOf(frequentRenterPoints)
-				+ " frequent renter points";
 		return result;
 	}
 	public void methodTakingAMovie(Movie movie) {
-	    
+
 	}
 }

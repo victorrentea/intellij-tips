@@ -3,9 +3,9 @@ package victor.training.legacy;
 public class LegacyCode {
 
 
-   public int method(int x) {
+   public int deepMethod(int x) {
       int i;
-      int j = 5; // try also f(x);
+      int j = 5;
       int k;
       int l = x;
       int result = 0;
@@ -23,16 +23,12 @@ public class LegacyCode {
             }
          } else {
             result = 3;
-            System.out.println("Send notification " + j);
          }
+         System.out.println("Send notification " + j);
       } else {
          result = 2;
       }
       return result;
-   }
-
-   private int f(int x) { // is this pure ?
-      return 0;
    }
 
 }

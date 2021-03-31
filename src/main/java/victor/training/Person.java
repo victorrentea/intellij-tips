@@ -7,6 +7,11 @@ public class Person {
    private String lastName;
    private String phone;
 
+
+   public String getPhone() { // TODO return Optional<>
+      return phone;
+   }
+
    public String getId() {
       return id;
    }
@@ -31,9 +36,6 @@ public class Person {
       this.lastName = lastName;
    }
 
-   public String getPhone() {
-      return phone;
-   }
 
    public void setPhone(String phone) {
       this.phone = phone;
