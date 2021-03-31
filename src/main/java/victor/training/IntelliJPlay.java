@@ -49,22 +49,23 @@ public class IntelliJPlay {
    // - Clipboard History (CTRL-SHIFT-V)
    // - Expand Selection (CTRL-[SHIFT]-W)
 
-   // ** ALT-ENTER
-   // - Define variable
-   // - Move variable definition closer to usages
-   // - Move return closer
-   // - Clean up Customer
-
    // ** Java8
    // - ALT-enter on .stream <--> for
    // - Collecting: ctl, cs, cj
    // - Skip .stream().
    // - :: auto-completion
 
+   // ** ALT-ENTER
+   // - Define variable
+   // - Move variable definition closer to usages
+   // - Move return closer
+   // - Clean up Customer
+
+
 
    /// ===========================
 
-   // ** REFACTORING
+   // ** REFACTORING - next episode
    // - Extract var/meth (select blocks)
    // - Refactor this (CTRL-ALT-SHIFT-T)
    // - Extract Interface
