@@ -13,7 +13,7 @@ public class Customer {
 			Rental rental = rentalsIt.next();
 
 			double price = 0;// TODO get from Rental
-			result += "TODO"; // TODO append formatStatementLine
+			// TODO result += formatStatementLine(..)
 			totalPrice += price;
 		}
 		result += "Amount owed is " + String.valueOf(totalPrice) + "\n";
