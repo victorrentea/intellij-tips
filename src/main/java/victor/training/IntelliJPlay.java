@@ -12,9 +12,6 @@ public class IntelliJPlay {
    public static void main(String[] args) {
       List<Integer> numbers = asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-      List<String> collect = numbers.stream().filter(n -> n % 2 == 0)
-          .map(Objects::toString)
-          .collect(Collectors.toList());
 
    }
 
