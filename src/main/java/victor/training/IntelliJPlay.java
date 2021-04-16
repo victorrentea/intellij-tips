@@ -17,8 +17,8 @@ public class IntelliJPlay {
 
    // ** Auto-Completion
    // - Contains / First letters, eg: person.gfn
-   // - Over-dot completion, eg p.gfn, LDT.now()
-   // - Static completion (CTRL-SPACE x 2), eg now, ctm; ALT-ENTER import static
+   // - Over-dot completion, eg p.gfn, S.ctm()
+   // - Static completion (CTRL-SPACE x 2), eg ctm, assertEquals; ALT-ENTER import static
    // - Type-safe Smart completion (CTRL-SHIFT-SPACE) + x2 = Chain Completion; eg methodTakingAMovie()
    // - Boilerplate completion: getter/setter/toString/hashCode+equals
    // - TAB completion (overwriting)
@@ -28,9 +28,10 @@ public class IntelliJPlay {
    // - Postfix Expansion, eg .sout .if .for .return + CUSTOM: .log ($EXPR$.log) .assertThat
 
    // ** SPEED-UP MAGIC
-   // - Complete Statement (CTRL-SHIFT-ENTER): if, method, "wrap call around"
+   // - Complete Statement (CTRL-SHIFT-ENTER): if, method, "wrap call around" eg Optional.ofNullable
    // - Multi-cursor (ALT-J) << ROCKS; eg: enum
    // - Surround with (CTRL-ALT-T) eg: if, try
+   // - Select + "'`<([{
 
    // ** NAVIGATION / SELECTION
    // - Back/Forward (CTRL-ALT-LEFT/RIGHT)
@@ -42,7 +43,7 @@ public class IntelliJPlay {
    // ** Java8
    // - ALT-enter on .stream <--> for
    // - Collecting: ctl, cs, cj
-   // - Skip .stream().
+   // - Skip ".stream()"...
    // - :: auto-completion
 
    // ** ALT-ENTER
