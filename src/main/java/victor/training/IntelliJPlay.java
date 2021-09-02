@@ -59,6 +59,8 @@ public class IntelliJPlay {
    // - Clipboard History (CTRL-SHIFT-V :: ⇧⌘V)
    // - Expand Selection (CTRL-[SHIFT]-W :: ⌥ ↑)
    // - Call hierarchy (CTRL-ALT-H :: ^⌥H)
+   // - Go to last edit place (CTRL-SHIFT-Backspace)
+
 
    // ** Stream support
    // - ALT-Enter on .stream <--> for
