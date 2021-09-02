@@ -1,0 +1,264 @@
+<html>
+
+<head>
+<link href="toastr.min.css" rel="stylesheet"/>
+<script type="text/javascript" src="jquery-1.12.2.min.js"></script>
+<script type="text/javascript" src="toastr.min.js"></script>
+<script type="text/javascript" src="js.cookie.min.js"></script>
+<style>
+html { 
+  background: url(luxury-spa.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+</style>
+</head>
+
+<body >
+	
+	<h2>Single Page Application</h2>
+	<h3>Hello, <span id="username"></span> <input type="button" value="logout" onclick="window.location='logout'"/></h3>
+	
+	
+	<div id="trainingMain" style="border:2px solid red">
+		<div id="searchDiv" style="border: 7px solid pink">
+			<label for="searchName">Name: </label><input id="searchName" type="text" size="10"/> <br />
+			<label for="searchTeacher">Teacher: </label><select id="searchTeacher" ></select> <br />
+			<input type="button" onclick="search()" value="Search" />
+		</div>
+		<table id="trainingTable" border="1">
+			<tr><th>Training Name</th><th>Start Date</th><th>Teacher</th><th>Ops</th></tr>
+		</table>
+		<input type="button" value="Reload" onclick="refreshTrainingsTable()">
+		<input type="button" value="Create New Training..." onclick="openCreateTraining()">
+	</div>
+
+	<div id="trainingNewDiv" style="display:none;border:2px solid green">
+		<h4>Create a New Training</h4>
+		Name:<input type="text" id="newName" /> <br />
+		Description:<textarea id="newDescription" cols="40" rows="3"></textarea> <br />
+
+		Start Date (dd-mm-yyyy):<input type="text" id="newStartDate" /> <br />
+		Teacher: <select id="newTeacher"></select> <br />
+		<input type="button" value="Create" onclick="createTraining()">
+		<input type="button" value="Cancel" onclick="$('#trainingNewDiv').hide();$('#trainingMain').show();">
+	</div>
+
+	<div id="trainingEditDiv" style="display:none; border:2px solid blue">
+		<h4>Edit a Training</h4>
+		<input type="hidden" id="editTrainingId" />
+		Name:<input type="text" id="editName" /> <br />
+		Description:<textarea id="editDescription" cols="40" rows="3"></textarea> <br />
+		Start Date (dd-mm-yyyy):<input type="text" id="editStartDate" /> <br />
+		Teacher: <select id="editTeacher"></select><br />
+		<input type="button" value="Save" onclick="updateTraining()">
+		<input type="button" value="Cancel" onclick="$('#trainingEditDiv').hide();$('#trainingMain').show();">
+	</div>
+
+	<div style="text-align: center; font-size: x-small">
+		Or some <a href="victim.html">Web Attacks</a>?
+	</div>
+<!-- <search multiple="multiple" id="trainingAvailable"><option value="a">A</option><option value="b">B</option></search>
+<input type="button" name=">>" onclick="moveSelectedOptions('#trainingAvailable', '#trainingSelected')"/>
+<input type="button" name="<<" onclick="moveSelectedOptions('#trainingSelected', '#trainingAvailable')"/>
+<search multiple="multiple" id="trainingSelected"></search> -->
+
+<script type="text/javascript">
+
+
+function moveSelectedOptions(fromId, toId) {
+	var selectedValues = $(fromId).val()
+	for (var i=0;i<selectedValues.length;i++) {
+		var $leftSel = $(fromId+" option[value='"+selectedValues[i]+"']");
+		$(toId).append('<option value="'+selectedValues[i]+'">'+$leftSel.text()+'</option>');
+		console.log($leftSel.html());
+		$leftSel.remove();
+	}
+}
+
+
+function getContextPath() {
+   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+}
+var restEndpoint = getContextPath() + "/api";
+// var restEndpoint = "http://localhost:8080/api"; // when testing CORS
+
+// global interceptor to send back the CSRF token
+$(document).ajaxSend(function ( event, jqxhr, settings ) {
+	let csrfToken = Cookies.get("XSRF-TOKEN");
+	if (csrfToken) {
+		console.log("Sending CSRF token as header: ",csrfToken);
+		jqxhr.setRequestHeader("X-XSRF-TOKEN", csrfToken);
+	}
+});
+function fillTable(trainings) {
+	$("#trainingTable tr").each(function (i, r) {
+		if (i > 0) r.remove();
+	});
+	for (var i = 0; i < trainings.length; i++) {
+		var c = trainings[i];
+		var row = '<tr id="' + c.id + '">';
+		row += '<td>' + c.name + '</td>';
+		row += '<td>' + c.startDate + '</td>';
+		row += '<td>' + c.teacherName + '</td>';
+		row += '<td>';
+		row += '<input type="button" value="Edit" onclick="openEditTraining(' + c.id + ')" />';
+		//if (currentUser.role === 'ROLE_ADMIN'))
+				// secured-for-role="ADMIN,POWER_USER" priviledge="training.delete"
+		if (currentUser.roles.includes('ROLE_ADMIN')) {
+			row += '<input  class="deleteButton" type="button" value="Delete" onclick="deleteTraining(' + c.id + ')" />';
+		}
+		row += '</td>';
+		row += '</tr>';
+		$('#trainingTable tr:last').after(row);
+	}
+}
+
+function refreshTrainingsTable() {
+	$.ajax(restEndpoint +"/trainings", {
+		method: "GET",
+		success: function(trainings) {
+			fillTable(trainings);
+			toastr.info("Trainings reloaded")
+		}
+	});
+}
+
+function search() {
+	$.ajax(restEndpoint +"/trainings/search", {
+		method: "POST",
+		data: JSON.stringify({
+			name:$("#searchName").val(),
+			teacherId:$("#searchTeacher").val()
+		}),
+		contentType: "application/json",
+		success: function(trainings) {
+			fillTable(trainings);
+			toastr.info("Search results displayed")
+		}
+	});
+}
+
+var currentUser = {};
+$.ajax(restEndpoint +"/user/current", {
+	method: "GET",
+	success: function(user) {
+		currentUser = user;
+		$("#username").text(user.username);
+		refreshTrainingsTable(); //
+	}});
+
+$("#newStartDate").val("01-01-2019");
+
+function populateTeacherCombo($teacherCombo) {
+	$teacherCombo.html("");
+
+	$.ajax(restEndpoint + "/teachers", {
+		method: "GET",
+		success: function(teachers) {
+			$.each(teachers, function (i, t) {
+			    $teacherCombo.append('<option value="'+t.id+'">'+t.name+'</option>');
+			});
+		}
+	});
+}
+populateTeacherCombo($("#newTeacher"));
+populateTeacherCombo($("#editTeacher"));
+populateTeacherCombo($("#searchTeacher"));
+$("#searchTeacher").append("<option></option>")
+
+
+function deleteTraining(id) {
+	$.ajax(restEndpoint +"/trainings/"+id, {
+		method: "DELETE",
+		success: function() {
+			toastr.success("Training deleted");
+			refreshTrainingsTable();
+		},
+		error: function(a,b,c) {
+			if (a.responseText) {
+				toastr.error(a.responseText);
+			}
+		}
+	});
+}
+
+//------------- TRAINING: UPDATE SCREEN --------------------
+
+function openEditTraining(trainingId) {
+	$.ajax(restEndpoint + "/trainings/"+trainingId, {
+		method: "GET",
+		success: function(data) {
+			//au venit datele
+			$("#editTrainingId").val(data.id);
+			$("#editName").val(data.name);
+			// BUG
+			$("#editStartDate").val(data.startDate);
+			$("#editTeacher").val(data.teacherId);
+			$('#trainingMain').hide();
+			$('#trainingEditDiv').show();
+		}
+	});
+}
+function updateTraining() {
+	$.ajax(restEndpoint +"/trainings/" +$("#editTrainingId").val(), {
+		method: "PUT",
+		data: JSON.stringify({
+			name:$("#editName").val(),
+			startDate:$("#editStartDate").val(),
+			teacherId:$("#editTeacher").val()
+		}),
+		contentType: "application/json",
+		success: function(data) {
+			toastr.success("Training Updated");
+			$('#trainingMain').show();
+			$('#trainingEditDiv').hide();
+			refreshTrainingsTable();
+		},
+		error: function(a,b,c) {
+			if (a.responseText) {
+				toastr.error(a.responseText);
+			}
+		}
+	});
+}
+
+// ------------- TRAINING: CREATE SCREEN --------------------
+
+function openCreateTraining() {
+	$("#newName").val("");
+	$("#newDescription").val("");
+	populateTeacherCombo($("#newTeacher"));
+	$('#trainingMain').hide();
+	$('#trainingNewDiv').show();
+}
+function createTraining() {
+	$.ajax(restEndpoint +"/trainings", {
+		data: JSON.stringify({
+			name:$("#newName").val(),
+			description:$("#newDescription").val(),
+			startDate:$("#newStartDate").val(),
+			teacherId:$("#newTeacher").val()
+		}),
+		method: "POST",
+		contentType: "application/json",
+		success: function(data) {
+			toastr.success("Training created");
+			$('#trainingMain').show();
+			$('#trainingNewDiv').hide();
+			refreshTrainingsTable();
+		},
+		error: function(a,b,c) {
+			if (a.responseText) {
+				toastr.error(a.responseText);
+			}
+		}
+	});
+}
+
+
+</script>
+</body>
+</html>

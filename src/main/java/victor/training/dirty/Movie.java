@@ -4,19 +4,19 @@ public class Movie {
 	public static final int CATEGORY_REGULAR = 0;
 	public static final int CATEGORY_NEW_RELEASE = 1;
 	private String title;
-	private int priceCode;
+	private int category;
 
-	public Movie(String title, int priceCode) {
+	public Movie(String title, int category) {
 		this.title = title;
-		this.priceCode = priceCode;
+		this.category = category;
 	}
 
-	public int getPriceCode() {
-		return priceCode;
+	public int getCategory() {
+		return category;
 	}
 
-	public void setPriceCode(int arg) {
-		priceCode = arg;
+	public void setCategory(int arg) {
+		category = arg;
 	}
 
 	public String getTitle() {

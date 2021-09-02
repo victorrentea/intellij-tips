@@ -1,5 +1,5 @@
 package victor.training.dirty;
-class Rental {
+public class Rental {
 	private final Movie movie;
 	private final int daysRented;
 
@@ -18,7 +18,7 @@ class Rental {
 
 	public double computePrice() {
 		double price = 0;
-		switch (getMovie().getPriceCode()) {
+		switch (getMovie().getCategory()) {
 		case Movie.CATEGORY_REGULAR:
 			price = 2;
 			if (daysRented > 2)
