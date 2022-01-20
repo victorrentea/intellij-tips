@@ -1,6 +1,8 @@
 package victor.training;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import victor.training.dirty.Customer;
 import victor.training.dirty.Movie;
 import victor.training.dirty.Rental;
@@ -14,10 +16,11 @@ import static java.util.Arrays.asList;
 
 public class IntelliJPlay {
 
+
    public static void main(String[] args) {
       List<Integer> numbers = asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-      Customer customer = new Customer();
+      Person person = new Person();
 
 //      LocalDateTime now =
 
