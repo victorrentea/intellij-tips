@@ -30,7 +30,7 @@ Video Courses, Personal or Company Training
 - **Multi-cursor** (ALT-J :: ^G); F3=skip; CTRL-ALT-SHIFT-J=all (demo on enum)
   - Also: Alt-Drag and Alt-Shift-Click+Click...
 - Surround with (CTRL-ALT-T :: ⌥⌘T): if, try
-- Closing Brace (&more): with text selected, press: "'`<([{
+- Embrace Selection (&more): while text is selected, press any of: {"'`<([
 - Expand Selection (CTRL-W :: ⌥ ↑)
 - Quick Fix (ALT-ENTER :: ⌥ ⏎):
   - Define Variable for expression
@@ -45,7 +45,8 @@ Video Courses, Personal or Company Training
 - Bookmarks (F11 :: F3)
 - Next Occurrence of Token (F3 :: ⌘G)
 - Quick Definition (Ctrl-Shift-I :: ⌥ Space)
-- Show Parameters (Ctrl-P) or return type of current expression (Ctrl-Shift-P)
+- Show parameters (Ctrl-P) 
+- Show type of current expression (Ctrl-Shift-P)
 - Clipboard History (CTRL-SHIFT-V :: ⇧⌘V)
 - Distraction Free (Ctrl-Alt-Shift-F12)
   - Alt-# for views

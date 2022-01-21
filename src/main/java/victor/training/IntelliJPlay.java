@@ -15,7 +15,8 @@ public class IntelliJPlay {
       Person person = new Person();
 
 
-      LocalDateTime now = LocalDateTime.now();
+      LocalDateTime now;
+
 
    }
 
