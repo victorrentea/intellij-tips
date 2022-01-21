@@ -48,6 +48,7 @@ Video Courses, Personal or Company Training
 - Show parameters (Ctrl-P) 
 - Show type of current expression (Ctrl-Shift-P)
 - Clipboard History (CTRL-SHIFT-V :: ⇧⌘V)
+
 - Distraction Free (Ctrl-Alt-Shift-F12)
   - Alt-# for views
 - Back/Forward (CTRL-ALT-LEFT/RIGHT :: ⌘[ / ⌘])
