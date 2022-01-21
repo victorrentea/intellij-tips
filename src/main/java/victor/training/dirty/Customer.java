@@ -1,6 +1,7 @@
 package victor.training.dirty;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -8,7 +9,7 @@ public class Customer {
 	private final List<Rental> rentals = new ArrayList<>();
 
 	public List<Rental> getRentals() {
-		return rentals;
+		return Collections.unmodifiableList(rentals);
 	}
 
 	public String generateStatement(String customerName, List<Rental> rentals) {

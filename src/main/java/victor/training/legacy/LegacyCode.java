@@ -13,7 +13,11 @@ public class LegacyCode {
       if (x > 0) {
          i = 1;
          if (x > i) {
-            result = subFunction(x, l, result);
+            var result1 = result;
+            int k1;
+            k1 = x - 2;
+            result1 = aaa(l, result1, k1);
+            result = result1;
          } else {
             result = 3;
          }
@@ -24,15 +28,13 @@ public class LegacyCode {
       return result;
    }
 
-   private int subFunction(int x, int l, int result) {
-      int k;
-      k = x - 2;
-      for (int p = 0; p < k; p++) {
-         System.out.println("Halo " + l);
-         l++;
-         result = evenDeeper(l, result, k);
+   private int aaa(int latitude, int result1, int k1) {
+      for (int p = 0; p < k1; p++) {
+         System.out.println("Halo " + latitude);
+         latitude++;
+         result1 = evenDeeper(latitude, result1, k1);
       }
-      return result;
+      return result1;
    }
 
    private int evenDeeper(int l, int result, int k) {

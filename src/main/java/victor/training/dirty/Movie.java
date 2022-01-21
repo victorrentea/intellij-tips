@@ -1,25 +1,35 @@
 package victor.training.dirty;
+
 public class Movie {
-	public static final int CATEGORY_CHILDRENS = 2;
-	public static final int CATEGORY_REGULAR = 0;
-	public static final int CATEGORY_NEW_RELEASE = 1;
-	private String title;
-	private int category;
+   public static final int CATEGORY_CHILDRENS = 2;
+         public static final int CATEGORY_REGULAR = 0;
+   public static final int CATEGORY_NEW_RELEASE = 1;
 
-	public Movie(String title, int category) {
-		this.title = title;
-		this.category = category;
-	}
+   enum MovieType {
+      CHILDRENS,
+      REGULAR,
+      NEW_RELEASE
+   }
 
-	public int getCategory() {
-		return category;
-	}
+   private String title;
+   private int category;
 
-	public void setCategory(int arg) {
-		category = arg;
-	}
+   public Movie(String title, int category) {
+      this.title = title;
+      this.category = category;
+   }
 
-	public String getTitle() {
-		return title;
-	};
+   public int getCategory() {
+      return category;
+   }
+
+   public void setCategory(int arg) {
+      category = arg;
+   }
+
+   public String getTitle() {
+      return title;
+   }
+
+   ;
 }

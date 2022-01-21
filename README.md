@@ -4,6 +4,8 @@ https://victorrentea.ro
 17 years of java, 9 years of trainings
 Community: https://victorrentea.ro/community
 
+Git: https://github.com/victorrentea/intellij-tips.git
+Branch: master
 Video Courses, Personal or Company Training
 
 ### Auto-Completion
