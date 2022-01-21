@@ -17,7 +17,6 @@ public class Customer {
 		String result = "Rental Record for " + customerName + "\n";
 		while (rentalsIt.hasNext()) {
 			Rental rental = rentalsIt.next();
-
 			double price = 0;// TODO get from Rental
 			// TODO result += formatStatementLine(..)
 			totalPrice += price;
