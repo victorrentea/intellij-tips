@@ -2,11 +2,12 @@ package victor.training.intellij.refactoring;
 
 public class Parameters {
 
-   public static void method(int x) {
-      System.out.println("Stuff that needs to be parameterized");
-      int data = x + 1;
+   public static void method(int w, int devs) {
+      System.out.println("Status report for project Colibri");
+      int days = w * 5; // work days per week
+      int md = days * (devs - 1);
       try {
-         System.out.println("Logic that has to change " + data);
+         System.out.println("Inner logic that has to change " + md);
       } catch (Exception e) {
          e.printStackTrace();
       }
@@ -15,19 +16,13 @@ public class Parameters {
 
 class Caller1 {
    public static void f() {
-      Parameters.method(1);
+      Parameters.method(5, 4);
    }
 }
 
 class Caller2 {
    public static void g() {
-      Parameters.method(2);
+      Parameters.method(12, 3);
    }
 }
-// - Refactor: Introduce Parameter
-// - Refactor: Inline Parameter
-// - Trick: Redefine Parameter
-// - Refactor: Introduce Parameter Object (new or reuse class)
-// - Refactor: Introduce Functional Parameter
-// - Refactor: Change method signature (with default)
-// - Trick: Alt-ENTER to add new param
+

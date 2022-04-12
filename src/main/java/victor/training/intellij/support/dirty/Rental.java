@@ -1,4 +1,4 @@
-package victor.training.intellij.refactoring.dirty;
+package victor.training.intellij.support.dirty;
 public class Rental {
 	private final Movie movie;
 	private final int daysRented;

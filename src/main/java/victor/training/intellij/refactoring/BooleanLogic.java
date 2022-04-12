@@ -1,6 +1,6 @@
-package victor.training.intellij.refactoring.legacy;
+package victor.training.intellij.refactoring;
 
-public class LegacyCode {
+public class BooleanLogic {
 
 
    public int deepMethod(int x) {

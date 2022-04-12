@@ -11,6 +11,7 @@ public class Fields {
    public void test2() {
       new TestedClass().f("b");
    }
+
 }
 class TestedClass {
    public void f(String a) {

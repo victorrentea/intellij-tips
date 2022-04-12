@@ -1,4 +1,4 @@
-package victor.training.intellij.refactoring.dirty;
+package victor.training.intellij.support.dirty;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,4 +29,5 @@ public class Customer {
 	public String formatStatementLine(Movie movie, double price) {
 		return "\t" + movie.getTitle() + "\t" + price + "\n";
 	}
+
 }

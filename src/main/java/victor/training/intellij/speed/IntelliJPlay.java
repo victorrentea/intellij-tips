@@ -1,8 +1,8 @@
 package victor.training.intellij.speed;
 
 
-import victor.training.intellij.refactoring.dirty.Customer;
-import victor.training.intellij.refactoring.dirty.Rental;
+import victor.training.intellij.support.dirty.Customer;
+import victor.training.intellij.support.dirty.Rental;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -3,12 +3,13 @@ by Victor Rentea, Software Crafter and Trainer
 https://victorrentea.ro
 
 17 years of java, 9 years of trainings
-Community: https://victorrentea.ro/community
+Huge Community: https://victorrentea.ro/community
 
 Git: https://github.com/victorrentea/intellij-tips.git
 Branch: master
 Video Courses, Personal or Company Training
 
+## Coding Speed
 
 ### Auto-Completion
 - Contains: person.first 
@@ -69,15 +70,7 @@ Video Courses, Personal or Company Training
 - Skip ".stream()"...
 - Fix "effectively final" with "Avoid mutation" quick fix
 
-### Inspections
-- Hundreds. That teach you coding practices.
-- Aggressive_Refactoring.xml   at  https://drive.google.com/file/d/1yBviYXPGtGe7ZNYJoaKxh8e1Yxzcr1el/view?usp=sharing
-- Run inspection on ...
-- Move variable definition closer to usages
-- Move return closer
-  
 ### Immersive UX
-
 - My own little "Live-Coding" Plugin :)
   - Shake your world
   - Cognitive Complexity
@@ -86,3 +79,42 @@ Video Courses, Personal or Company Training
 
 
 Note: Mac: ⌥ = "Option", ^ = "Ctrl"
+
+## Refactoring 
+
+### Parameters.java
+- Refactor: **Introduce Parameter** to parameterize function for broader use
+- Refactor: **Change Method signature** + default value
+- Refactor: **Inline Parameter 💪** - if all callers pass the same constant
+- Trick: Replace Parameter with query if all callers pass same thing
+- Refactor: **Introduce Parameter Object** (new or reuse class)
+- Refactor: Introduce Parameter (bis) to simplify signatures (repeat previous one)
+- Refactor: **Introduce Functional Parameter**
+- Refactor: **Change method signature** (with default)
+- Trick: Add/remove param via Alt-ENTER
+
+### Fields
+- Refactor: **Extract / Inline field** - ❗ Keep state short-lived
+- Refactor: **Encapsulate Fields**
+
+### Method
+- Refactor: **Extract + Parameterize Method** for reuse
+- Refactor Combo: **Extract over > Inline inner** (note: extract just the if )
+- Refactor Combo: **Extract + Move Method** into Parameter or Dependency
+
+### Local Variables
+- Trick: Remove redundant parameter smoothly
+- Refactor: **Extract explanatory variable**
+- Refactor: **Split Variable** to keep semantic sharp
+
+### Classes
+- Refactor: **Extract Delegate** in a lower-level service or in a deeper structure  
+- Refactor: **Inline Delegate**
+- Refactor: **Extract / Inline Interface**
+
+### Inspections
+Hundreds. That teach you best practices.
+- Move return closer
+- Move variable definition closer to usages
+- Run inspection on whole project
+More inspections? Download my opinionated Aggressive_Refactoring.xml   at  https://drive.google.com/file/d/1yBviYXPGtGe7ZNYJoaKxh8e1Yxzcr1el/view?usp=sharing

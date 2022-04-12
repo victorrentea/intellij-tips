@@ -1,4 +1,4 @@
-package victor.training.intellij.refactoring.dirty;
+package victor.training.intellij.support.dirty;
 
 public class Movie {
    public static final int CATEGORY_CHILDRENS = 2;

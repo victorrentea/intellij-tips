@@ -1,4 +1,4 @@
-package victor.training.intellij.refactoring.dirty;
+package victor.training.intellij.support.dirty;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
