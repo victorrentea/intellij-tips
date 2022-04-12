@@ -1,4 +1,4 @@
-package victor.training.legacy;
+package victor.training.intellij.refactoring.legacy;
 
 public class LegacyCode {
 

@@ -1,4 +1,4 @@
-package victor.training;
+package victor.training.intellij.speed;
 
 import java.util.Objects;
 

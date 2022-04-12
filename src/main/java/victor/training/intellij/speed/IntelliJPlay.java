@@ -1,13 +1,12 @@
-package victor.training;
+package victor.training.intellij.speed;
 
 
-import victor.training.dirty.Customer;
-import victor.training.dirty.Rental;
+import victor.training.intellij.refactoring.dirty.Customer;
+import victor.training.intellij.refactoring.dirty.Rental;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;

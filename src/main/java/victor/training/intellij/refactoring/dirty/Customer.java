@@ -1,4 +1,4 @@
-package victor.training.dirty;
+package victor.training.intellij.refactoring.dirty;
 
 import java.util.ArrayList;
 import java.util.Collections;
