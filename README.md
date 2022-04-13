@@ -9,7 +9,7 @@ Git: https://github.com/victorrentea/intellij-tips.git
 Branch: master
 Video Courses, Personal or Company Training
 
-## Coding Speed
+## Part 1 - Coding Speed (recorded at https://victorrentea.ro/#talks)
 
 ### Auto-Completion
 - Contains: person.first 
@@ -77,10 +77,9 @@ Video Courses, Personal or Company Training
   - Lombok: @RAC @Slf4J
   - QuickImport: assertThat... + 30 more
 
-
 Note: Mac: ⌥ = "Option", ^ = "Ctrl"
 
-## Refactoring 
+## Part 2 - Refactoring 
 
 ### Parameters.java
 - Refactor: **Introduce Parameter** to parameterize function for broader use
@@ -117,5 +116,10 @@ Note: Mac: ⌥ = "Option", ^ = "Ctrl"
 Hundreds. That teach you best practices.
 - Move return closer
 - Move variable definition closer to usages
+- For to .stream()
+- 
 - Run inspection on whole project
-More inspections? Download my opinionated Aggressive_Refactoring.xml   at  https://drive.google.com/file/d/1yBviYXPGtGe7ZNYJoaKxh8e1Yxzcr1el/view?usp=sharing
+
+## More inspections?
+Download my opinionated Aggressive_Refactoring.xml
+from https://victorrentea.ro
