@@ -106,6 +106,7 @@ Note: Mac: ⌥ = "Option", ^ = "Ctrl"
 - Trick: Remove redundant parameter smoothly
 - Refactor: **Extract explanatory variable**
 - Refactor: **Split Variable** to keep semantic sharp
+- Trick: suggests extract expression under cursor
 
 ### Classes
 - Refactor: **Extract Delegate** in a lower-level service or in a deeper structure  
