@@ -77,6 +77,10 @@ Video Courses, Personal or Company Training
   - Visual effects & presentation speed optimization
   - QuickImport: assertThat... + 30 more
 
+------------
+
+
+
 ## Part 2 - Refactoring 
 
 ### Parameters.java
@@ -104,7 +108,9 @@ Video Courses, Personal or Company Training
 - Refactor: **Split Variable** to keep semantic sharp
 
 ### Classes
-- Refactor: **Extract Delegate** in a lower-level service or in a deeper structure  
+- Refactor: **Extract Delegate** 
+  - in a lower-level service or
+  - in a deeper structure (ie. deeper Domain Model)
 - Refactor: **Extract / Inline Interface**
 
 ### Inspections (see BooleanLogic.java)
