@@ -25,9 +25,3 @@ class SomeService2 {
    }
 }
 
-class TaxCalculator {
-   public int computeTax(int parcelValue) {
-      return parcelValue / 2;
-   }
-}
-
