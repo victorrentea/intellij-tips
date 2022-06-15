@@ -12,7 +12,7 @@ class ExtractMethod {
         System.out.println("Logic F");
         for (int i = 0; i < 4; i++) {
             if (n + i < 0) {
-                System.out.println("Code " + i);
+                sendMessage("Code " + i);
             } else {
                 throw new IllegalArgumentException();
             }
@@ -23,7 +23,7 @@ class ExtractMethod {
         try {
             for (int j = 0; j < 4; j++) {
                 if (n + j < 0) {
-                    System.out.println("Code" + j);
+                    sendMessage("Code" + j);
                 } else {
                     throw new IllegalArgumentException();
                 }
@@ -31,6 +31,10 @@ class ExtractMethod {
         } catch (Exception e) {
             throw new RuntimeException("Rethrow", e);
         }
+    }
+
+    public void sendMessage(String message) {
+        System.out.println(message);
     }
 
     public void businessLogic(CustomerProfile customer) {

@@ -5,7 +5,7 @@ import victor.training.intellij.support.dirty.Rental;
 
 import java.util.List;
 
-public class Variables {
+public class LocalVariables {
    public int getFrequentRenterPoints(List<Rental> rentals) {
       int frequentRenterPoints = 0;
       for (Rental rental : rentals) {
