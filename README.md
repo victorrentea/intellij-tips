@@ -105,7 +105,6 @@ Video Courses, Personal or Company Training
 
 ### Classes
 - Refactor: **Extract Delegate** in a lower-level service or in a deeper structure  
-- Refactor: **Inline Delegate** (experim)
 - Refactor: **Extract / Inline Interface**
 
 ### Inspections (see BooleanLogic.java)
