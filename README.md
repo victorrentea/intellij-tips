@@ -105,16 +105,14 @@ Video Courses, Personal or Company Training
 
 ### Classes
 - Refactor: **Extract Delegate** in a lower-level service or in a deeper structure  
-- Refactor: **Inline Delegate**
+- Refactor: **Inline Delegate** (experim)
 - Refactor: **Extract / Inline Interface**
 
-### Inspections
+### Inspections (see BooleanLogic.java)
 Hundreds. That teach you best practices.
 - Move return closer
 - Move variable definition closer to usages
-- For to .stream()
+- for to .stream()
 - Run inspection on whole project
-
-## More inspections?
-Download my opinionated Aggressive_Refactoring.xml
+- Want **more inspections**? Download my (opinionated) Aggressive_Refactoring.xml
 from https://victorrentea.ro
