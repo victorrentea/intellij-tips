@@ -6,9 +6,9 @@ https://victorrentea.ro
 
 - 17 years of java, 9 years of trainings and consultancy
 
-- Founder of the 2nd largest Software Crafter Community 
-on Meetup.com (5K devs):
-Join us 👉 https://victorrentea.ro/community
+- Founder of the 2nd largest 
+  Software Crafter Community on Meetup.com (5K members):
+  Join us 👉 https://victorrentea.ro/community
 
 
 # Hi, DevTernity !
@@ -36,7 +36,7 @@ Join us 👉 https://victorrentea.ro/community
 
 ### Smart Selecting
 - Multi-cursor
-  - token-based (ALT-J :: ^G) -- MovieType .html 
+  - Token-based❤️ (ALT-J :: ^G) -- MovieType .html 
   - ALT-drag -- .feature
   - ALT-SHIFT + click, click
 - Expand/Contract selection
@@ -89,4 +89,4 @@ Join us 👉 https://victorrentea.ro/community
   mailto:victorrentea@gmail.com
 
 - Join my Community of Software Crafters (>5000 members) 
-for monthly live webinars and hot🔥 debates
+  for monthly live webinars and hot🔥 debates

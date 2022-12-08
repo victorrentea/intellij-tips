@@ -74,11 +74,14 @@ public class ReactiveHell {
   }
 
 
-  public Mono<P10UseCaseContext> p10_contextPattern(int id) {
+  public Mono<ABC> nestedLambdas3(int id) {
+    return dependency.a(id).flatMap(a -> dependency.b1(a).flatMap(b -> dependency.c2(a, b).map(c -> new ABC(a, b, c))));
+  }
+
+  public Mono<P10UseCaseContext> reactivePainChain(int id) {
     return dependency.a(id).zipWith(dependency.d(id),
                     (a, d) -> new P10UseCaseContext(id).withA(a).withD(d))
             .flatMap(context -> dependency.b1(context.getA()).map(context::withB))
             .flatMap(context -> dependency.c2(context.getA(), context.getB()).map(context::withC));
-
   }
 }
