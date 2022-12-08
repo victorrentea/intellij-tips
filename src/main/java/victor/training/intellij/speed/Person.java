@@ -1,17 +1,52 @@
 package victor.training.intellij.speed;
 
+import lombok.Data;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+
 
 // typical Java Bean (1997)
 public class Person {
    private String id;
    private String firstName;
+   private String firstLetter;
    private String lastName;
-   private String phone; // NULLABLE in database
+   private String phone;
    private LocalDateTime createTime;
    private Bio bio;
+   private List<String> addresses;
+
+   enum Status {
+
+   }
+
+
+   public List<String> getAddresses() {
+      return addresses;
+   }
+
+   public String getFirstLetter() {
+      return firstLetter;
+   }
+
+   @Override
+   public String toString() {
+      return "Person{" +
+             "id='" + id + '\'' +
+             ", firstName='" + firstName + '\'' +
+             ", firstLetter='" + firstLetter + '\'' +
+             ", lastName='" + lastName + '\'' +
+             ", phone='" + phone + '\'' +
+             ", createTime=" + createTime +
+             ", bio=" + bio +
+             '}';
+   }
+
+   public void setBio(Bio bio) {
+      this.bio = bio;
+   }
 
    public Bio getBio() {
       return bio;
@@ -26,7 +61,7 @@ public class Person {
       return this;
    }
 
-   public Optional<String> getPhone() { // TODO return Optional<>
+   public Optional<String> getPhone() {
       return Optional.ofNullable(phone);
    }
 
