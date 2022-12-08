@@ -6,9 +6,7 @@ public class Movie {
   public static final int CATEGORY_NEW_RELEASE = 1;
 
   enum MovieType {
-    CHILDRENS,
-    REGULAR,
-    NEW_RELEASE
+   // TODO create from constants
   }
 
   private String title;

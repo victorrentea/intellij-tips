@@ -7,13 +7,14 @@ https://victorrentea.ro
 - 17 years of java, 9 years of trainings and consultancy
 
 - Founder of the 2nd largest Software Crafter Community 
-in the world (5K devs):
-https://victorrentea.ro/community
+on Meetup.com (5K devs):
+Join us 👉 https://victorrentea.ro/community
 
 
 # Hi, DevTernity !
 
 ## First day driving ...
+
 ## Exploratory Refactoring
 
 ### Typing
@@ -35,23 +36,24 @@ https://victorrentea.ro/community
 
 ### Smart Selecting
 - Multi-cursor
-  - token-based (ALT-J :: ^G )
-  - ALT-drag
+  - token-based (ALT-J :: ^G) -- MovieType .html 
+  - ALT-drag -- .feature
   - ALT-SHIFT + click, click
 - Expand/Contract selection
 
-### The King 👑
-- Quick Fix (ALT-ENTER :: ⌥ ⏎):
-  - Define Variable for expression
-  - Define new type/method
-  - Add parameters
-  - Delete dead code
-  - Syntax-Tree analysis: see Boolean Logic
-  - and 100+ more 😊=> enable more that are disabled by default
+### 👑 Quick Fix (aka Inspections) 
+(ALT-ENTER :: ⌥ ⏎):
+- Define Variable for expression
+- Define new type/method
+- Delete dead code
+- Syntax-Tree analysis: see Boolean Logic
+- Run inspection on all project -- String.valueOf
+- and 500+ more 😊=> almost all are disabled by default
     
 ### FP Support
 - ALT-Enter on .stream <-> for
-- Skip writing ".stream()" ...
+- Skip writing ".stream()"
+- Autocomplete after directly after ::  
 - Collecting: ctl, cs, cj
 
 ### Code inspection / Surviving Legacy

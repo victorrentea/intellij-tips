@@ -22,12 +22,13 @@ public class Customer {
 			// TODO result += formatStatementLine(..)
 			totalPrice += price;
 		}
+
 		result += "Amount owed is " + String.valueOf(totalPrice) + "\n";
 		return result;
 	}
 
 	public String formatStatementLine(Movie movie, double price) {
-		return "\t" + movie.getTitle() + "\t" + price + "\n";
+		return "\t" + movie.getTitle() + "\t" + String.valueOf(price) + "\n";
 	}
 
 }
