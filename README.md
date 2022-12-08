@@ -47,7 +47,7 @@ Join us 👉 https://victorrentea.ro/community
 - Define new type/method
 - Delete dead code
 - Syntax-Tree analysis: see Boolean Logic
-- Run inspection on all project -- String.valueOf
+- Run inspection on entire project -- String.valueOf
 - and 500+ more 😊=> almost all are disabled by default
     
 ### FP Support
