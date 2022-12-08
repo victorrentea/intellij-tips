@@ -1,47 +1,42 @@
 package victor.training.intellij.speed;
 
 
+import victor.training.intellij.speed.Person.MaritalStatus;
 import victor.training.intellij.support.dirty.Customer;
 import victor.training.intellij.support.dirty.Rental;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class IntelliJPlay {
-   public static void main(String[] args) {
-      List<Integer> numbers = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).toList();
-      Person person = new Person();
+  public static void main(String[] args) {
+    Person person = new Person();
 
-      Set<Integer> set = numbers.stream().map(n -> n + 1).collect(toSet());
+    Customer customer = new Customer();
+    List<Integer> list = new ArrayList<>();
+    for (Rental rental : customer.getRentals()) {
+      list.add(rental.getDaysRented());
+    }
+    System.out.println(list);
+    method(customer.getRentals());
+  }
 
-      person.someNewMethod(numbers);
-      LocalDateTime now;
-      timeBased(person.getCreateTime());
-
-      Customer customer = new Customer();
-      List<Integer> list = customer.getRentals().stream().map(Rental::getDaysRented).collect(toList());
-      System.out.println(list);
-      method(customer.getRentals());
-   }
-
-
+  public static void introduce(String firstName, MaritalStatus maritalStatus) {
+     System.out.println("This is " + firstName + (maritalStatus == MaritalStatus.SINGLE ? "😉" : ""));
+  }
 
 
-
-   public static void method(List<Rental> rentals) {
-      rentals.clear();
-   }
-
-   public static void timeBased(LocalDateTime dateTime) {
-      System.out.println("Logic with " + dateTime);
-      System.out.println("asdsad");
-   }
+  public static void method(List<Rental> rentals) {
+    rentals.clear();
+  }
 
 
 }

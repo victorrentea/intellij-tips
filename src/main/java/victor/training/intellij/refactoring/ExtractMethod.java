@@ -1,12 +1,12 @@
-package victor.training.intellij.refactoring.extract_method;
+package victor.training.intellij.refactoring;
 
 import lombok.RequiredArgsConstructor;
+import victor.training.intellij.support.AnotherService;
 import victor.training.intellij.support.CustomerProfile;
-import victor.training.intellij.support.dirty.Customer;
 
 @RequiredArgsConstructor
 class ExtractMethod {
-    private final Dependency dependency;
+    private final AnotherService anotherService;
     
     public void f(int n) {
         System.out.println("Logic F");
@@ -22,7 +22,7 @@ class ExtractMethod {
         System.out.println("Logic G");
         try {
             for (int j = 0; j < 4; j++) {
-                if (n + j < 0) {
+                if (n + j < 0) { // Combo inner/outer
                     sendMessage("Code" + j);
                 } else {
                     throw new IllegalArgumentException();

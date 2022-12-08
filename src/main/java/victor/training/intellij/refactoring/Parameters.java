@@ -8,13 +8,13 @@ interface SomeRepo {
 @RequiredArgsConstructor
 public class Parameters {
    private final SomeRepo someRepo;
-   public void method(int w, int devs) {
+   public void method(int weeks, int devs) {
       System.out.println("Status report for project Colibri");
-      int days = w * 5; // work days per week
-      System.out.println("Worked weeks " + w);
-      int md = days * (devs - 1);
+      int days = weeks * 5; // work days per week
+      System.out.println("Worked weeks " + weeks);
+      int mandays = days * (devs - 1);
       try {
-         System.out.println("Inner logic that has to change " + md);
+         System.out.println("Inner logic that has to change " + mandays);
       } catch (Exception e) {
          e.printStackTrace();
       }

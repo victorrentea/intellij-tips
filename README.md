@@ -1,123 +1,90 @@
-#IntelliJ Tricks
-by Victor Rentea, Software Crafter and Trainer
+#IntelliJ Tricks by Victor Rentea, Software Crafter and Trainer
+
+# Me
+- Doing workshops for companies throughout the world.
 https://victorrentea.ro
 
-17 years of java, 9 years of trainings
-Huge Community: https://victorrentea.ro/community
+- 17 years of java, 9 years of trainings and consultancy
 
-Git: https://github.com/victorrentea/intellij-tips.git
-Branch: master
-Video Courses, Personal or Company Training
+- Founder of the 2nd largest Software Crafter Community 
+in the world (5K devs):
+https://victorrentea.ro/community
 
-## Part 1 - Coding Speed (see the recording at https://victorrentea.ro/#talks)
 
-### Auto-Completion
-- Contains: person.first 
-- First letters: person.gfn
-- Over-dot completion: p.gfn, S.ctm()
-- Statics (CTRL-SPACE x 2): ctm, assertEquals
-- ALT-ENTER in autocomplete suggestion > import static method
-- TAB completion (overwriting)
-- Boilerplate generation (vs ALT-INS): get/set/toString/hashCode
-- **Compatible type suggesions** (CTRL-SHIFT-SPACE || ^⌥Space)
-    - x2 = Chain Completion (one dot deep); eg timeBased(_)
+# Hi, DevTernity !
 
-### Templates
-- Live Templates: main, sout
-  - CUSTOM: pf, logs
-- Postfix Expansion: .sout .if .for .return
-  - CUSTOM: .assertThat, .log ($EXPR$.log) 
+## First day driving ...
+## Exploratory Refactoring
 
-### Faster Typing
-- **Complete Current Statement** (CTRL-SHIFT-ENTER :: ⇧⌘Enter)
+### Typing
+- Autocompletion: person.firstName > person.fn > p.fn
+- Boilerplate: toString
+- Type-aware / snake-completion: MaritalStatus  
+- Postfix Completion: .sout .log .assertThat
+- Live Templates: boot, logs
+- TAB completion
+- Statics (CTRL-SPACE x 2): ctm
+
+### Wrapping
+- Finish Statement (CTRL-SHIFT-ENTER :: ⇧⌘Enter) 
   - if, method, class
-  - wrap call around eg Optional.ofNullable`
-- **Multi-cursor** (ALT-J :: ^G); F3=skip; CTRL-ALT-SHIFT-J=all (demo on enum)
-  - Also: Alt-Drag and Alt-Shift-Click+Click...
+  - method call: ofNullable(
+  - Wrap generics: Optional<
 - Surround with (CTRL-ALT-T :: ⌥⌘T): if, try
-- Embrace Selection (&more): while text is selected, press any of: {"'`<([
-- Expand Selection (CTRL-W :: ⌥ ↑)
+- Embrace Selection: while text is selected, press any of: {"'`<([
+
+### Smart Selecting
+- Multi-cursor
+  - token-based (ALT-J :: ^G )
+  - ALT-drag
+  - ALT-SHIFT + click, click
+- Expand/Contract selection
+
+### The King 👑
 - Quick Fix (ALT-ENTER :: ⌥ ⏎):
   - Define Variable for expression
   - Define new type/method
   - Add parameters
   - Delete dead code
-  - 100+ more 😊
- 
-### Navigation 
-- Call hierarchy (CTRL-ALT-H :: ^⌥H)
-- Go to last edit place (CTRL-SHIFT-Backspace)
-- Bookmarks (F11 :: F3)
-- Next Occurrence of Token (F3 :: ⌘G)
-- Quick Definition (Ctrl-Shift-I :: ⌥ Space)
-- Show parameters (Ctrl-P) 
-- Show type of current expression (Ctrl-Shift-P)
-- Clipboard History (CTRL-SHIFT-V :: ⇧⌘V)
-
-- Distraction Free (Ctrl-Alt-Shift-F12)
-  - Alt-# for views
-- Back/Forward (CTRL-ALT-LEFT/RIGHT :: ⌘[ / ⌘])
-- Recent Files (CTRL-E :: ⌘E)
-- Recent Locations (CTRL-SHIFT-E)
-- CamelHumps on CTRL-LEFT/RIGHT
-
-### Learning Shortcuts
-- "KeyPromoterX" plugin
-
-### Java8/Stream support
-- ALT-Enter on .stream <--> for
+  - Syntax-Tree analysis: see Boolean Logic
+  - and 100+ more 😊=> enable more that are disabled by default
+    
+### FP Support
+- ALT-Enter on .stream <-> for
+- Skip writing ".stream()" ...
 - Collecting: ctl, cs, cj
-- Skip ".stream()"...
-- Fix "effectively final" with "Avoid mutation" quick fix
 
-### Immersive UX
-- My own little "Live-Coding" Plugin :)
-  - Quickfixes for a series of tasks: adopt Lombok, migrate to AssertJ, ...
-  - Display Cognitive Complexity
-  - Visual effects & presentation speed optimization
-  - QuickImport: assertThat... + 30 more
+### Code inspection / Surviving Legacy
+- Quick Definition (Ctrl-Shift-I :: ⌥ Space)
+- Current Parameter (Ctrl-P)
+- Type of current expression (Ctrl-Shift-P)
+- Call hierarchy (CTRL-ALT-H :: ^⌥H)
+- Recent Files (CTRL-E :: ⌘E) 
+- Recent Places/Changes (CTRL-SHIFT-E)
+- Bookmark (F11 :: F3)
+- Collapse / Fold (CTRL-. :: ⌘.)
 
-------------
+### Refactoring
+- Introduce Parameter, Functional Parameter, and Parameter Object -- Parameters.java
+- Add param from inside / from outside w/ ALT-ENTER 
+
+- Extract Method (+ Auto-Parameterize) -- ExtractMethod.java
+- Combo: Extract over & Inline inner
+- Combo: Extract & Move/Convert to Instance
+
+- Extract / Inline / Encapsulate Field -- Fields.java 
+- Extract explanatory variable (w or w/o preselecting)
+- Extract / Inline Interface
 
 
+### Next Steps
+- Become a Shortcuts Ninja 🥷: install "Key Promoter X" plugin
+- Practice all the moves yourself (pause-play this)
+  
+- More Inspections: Download my (opinionated) inspections list
+  (search Aggressive_Refactoring.xml on https://victorrentea.ro)
+- In-house workshop your company won't ever forget  
+  mailto:victorrentea@gmail.com
 
-## Part 2 - Refactoring (see the recording at https://victorrentea.ro/#talks)
-
-### Parameters.java
-- Refactor: **Change Method signature** + default value
-- Refactor: **Introduce Parameter** to parameterize function for broader use
-- Refactor: **Inline Parameter 💪** - if all callers pass the same constant
-- Trick: Replace Parameter with query if all callers pass same thing
-- Refactor: **Introduce Parameter Object** (new or reuse class)
-- Refactor: **Introduce Functional Parameter**
-- Trick: Add/remove param via Alt-ENTER
-- Trick: Define duplicated Local to then remove redundant parameter
-
-### Method
-- Refactor: **Extract + Parameterize Method** for reuse
-- Refactor Combo: **Extract over > Inline inner** (note: extract just the if )
-- Refactor Combo: **Extract + Move Method** into Parameter or Dependency
-
-### Fields
-- Refactor: **Extract / Inline field** - ❗ Keep state short-lived
-- Refactor: **Encapsulate Fields**
-
-### Local Variables
-- Refactor: **Extract explanatory variable**
-- Trick: suggests extract expression under cursor
-- Refactor: **Split Variable** to keep semantic sharp
-
-### Classes
-- Refactor: **Extract Delegate** 
-  - in a lower-level service or
-  - in a deeper structure (ie. deeper Domain Model)
-- Refactor: **Extract / Inline Interface**
-
-### Inspections (see BooleanLogic.java)
-Hundreds. That teach you best practices.
-- Move return closer
-- Move variable definition closer to usages
-- for to .stream()
-- Run inspection on whole project
-- Want **more inspections**? Download my (opinionated) Aggressive_Refactoring.xml
-from https://victorrentea.ro
+- Join my Community of Software Crafters (>5000 members) 
+for monthly live webinars and hot🔥 debates

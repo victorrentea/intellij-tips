@@ -13,8 +13,8 @@ public class BooleanLogic {
       if (x > 0) {
          i = 1;
          if (x > i) {
-            var result1 = result;
             int k1;
+            var result1 = result;
             k1 = x - 2;
             result1 = aaa(l, result1, k1);
             result = result1;
