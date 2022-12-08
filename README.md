@@ -81,7 +81,7 @@ Video Courses, Personal or Company Training
 
 
 
-## Part 2 - Refactoring 
+## Part 2 - Refactoring (see the recording at https://victorrentea.ro/#talks)
 
 ### Parameters.java
 - Refactor: **Change Method signature** + default value
